@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "dispenserfarm",
+  "version": "1.0.0",
+  "name": "Dispenser Farm",
+  "description": "DispenserFarm allows dispensers to plant almost all types of crops and plants in Minecraft.",
+  "authors": ["NguyenDevs"],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/dispenserfarm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.NguyenDevs.dispenserfarm.client.DispenserfarmDataGenerator"
+    ],
+    "client": [
+      "com.NguyenDevs.dispenserfarm.client.DispenserfarmClient"
+    ],
+    "main": [
+      "com.NguyenDevs.dispenserfarm.Dispenserfarm"
+    ]
+  },
+  "mixins": [
+    "dispenserfarm.mixins.json",
+    {
+      "config": "dispenserfarm.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": ">=1.21",
+    "java": ">=21"
+  }
+}
